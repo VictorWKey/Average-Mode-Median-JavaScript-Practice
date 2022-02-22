@@ -1,6 +1,15 @@
 //AVERAGE CODE
 
-function averageCalculate(listNums1){
+function averageCalculate(){
+    const averageInput = document.getElementById("averageInput");
+    const nums = averageInput.value;
+
+    
+
+    var listNums1 = [Number(nums)];
+    console.log(listNums1);
+
+
     const sumList = listNums1.reduce( 
         function (accumulatedValue = 0, newElement) {
             return accumulatedValue + newElement;
@@ -8,7 +17,7 @@ function averageCalculate(listNums1){
     );
     
     let averageResult = sumList / listNums1.length;
-    return averageResult;
+    console.log(averageResult);
 }
 
 //MEDIAN CODE
@@ -62,7 +71,53 @@ function modeCalculate(listNums3){
     return mode[0];
 }
 
+//WEIGHTED AVERAGE
 
+const notes =[
+    {
+        course: "Maths",
+        note: 9,
+        credit: 4,
+    }, 
+    {
+        course: "Chemistry",
+        note: 7,
+        credit: 3,
+    }, 
+    {
+        course: "Statistics",
+        note: 10,
+        credit: 2,
+    }, 
+    {
+        course: "Literature",
+        note: 6,
+        credit: 2,
+    }
+];
 
+const notesCreditsArray = notes.map(
+    function (multiplicationObject){
+        return multiplicationObject.note * multiplicationObject.credit;
+    }
+);
 
+const sumNotesCredits = notesCreditsArray.reduce(
+    function(accumulatedValue = 0, newElement){
+        return accumulatedValue + newElement;
+    }
+);
 
+const creditsArray = notes.map(
+    function(additionObject){
+        return additionObject.credit;
+    }
+);
+
+const sumCredits = creditsArray.reduce(
+    function(accumulatedValue = 0, newElement){
+        return accumulatedValue + newElement;
+    }
+);
+
+const weightedAverage = parseFloat((sumNotesCredits / sumCredits).toFixed(2));
