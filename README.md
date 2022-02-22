@@ -1,6 +1,6 @@
 # Average-Mode-Median-JavaScript-Practice
 
-This are the steps to create the percentages and discounts calculator
+This are the steps to create the average, mode and median calculator
 
 First Step: define the formulas
 Second Step: implement formulas in JavaScript
