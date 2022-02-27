@@ -1,26 +1,51 @@
 //AVERAGE CODE
 
-function averageCalculate(){
-    const averageInput = document.getElementById("averageInput");
-    const nums = averageInput.value;
+function numberToAverage(){
+    let numbersAmount = document.getElementById("numbersAmount1").value;
+    let html = "";
 
-    
+    for(var i = 0; i < numbersAmount; i++){
+        html += "<label>Number" + (i+1) + "</label>" + "<input type = 'number' id = 'numberValueAverage" + i + "'><br>";
+    }
+    html += "<button type = 'button' onclick = 'averageCalculate("+numbersAmount+")' id = 'buttonToCalculateAverage'>Calculate</button>";
 
-    var listNums1 = [Number(nums)];
-    console.log(listNums1);
+    document.getElementById("spaceToPutNumber1").innerHTML = html;
+}
 
+function averageCalculate(amount){
 
-    const sumList = listNums1.reduce( 
+    const numsList = [];
+
+    for(var i = 0; i < amount; i++){
+         const inputValues = document.getElementById("numberValueAverage" + i).value;
+         numsList.push(parseInt(inputValues));
+    }
+
+    const sumList = numsList.reduce( 
         function (accumulatedValue = 0, newElement) {
             return accumulatedValue + newElement;
         }
     );
     
-    let averageResult = sumList / listNums1.length;
-    console.log(averageResult);
+    const averageResult = sumList / numsList.length;
+    const result = document.getElementById("result1");
+
+    result.innerText = "The average is: " + averageResult;
 }
 
 //MEDIAN CODE
+
+function numberToMedian(){
+    const numbersAmount = document.getElementById("numbersAmount2").value;
+    let html = "";
+
+    for(var i = 0; i < numbersAmount; i++){
+        html += "<label>Number" + (i+1) + "</label>" + "<input type = 'number' id = 'numberValueMedian" + i + "'><br>";
+    }
+    html += "<button type = 'button' onclick = 'medianCalculate("+numbersAmount+")' id = 'buttonToCalculateMedian'>Calculate</button>";
+
+    document.getElementById("spaceToPutNumber2").innerHTML = html;
+}
 
 function isPar(num){
     if (num % 2 === 0){
@@ -30,28 +55,57 @@ function isPar(num){
     }
 }
 
-function medianCalculate (listNums2){
+function medianCalculate (amount){
+
+    const listNums2 = [];
+
+    for(var i = 0; i < amount; i++){
+        const inputValues = document.getElementById("numberValueMedian" + i).value;
+        listNums2.push(parseInt(inputValues));
+   }
 
     listNums2.sort((a, b) => a - b);
 
-    let halfList = parseInt(listNums2.length / 2);
+    const halfList = parseInt(listNums2.length / 2);
 
     let median;
 
     if(isPar(listNums2.length)){
          midPosition1 = listNums2[halfList];
          midPosition2 = listNums2[halfList - 1];
-         averagePositions = averageCalculate([midPosition1, midPosition2]);
+         averagePositions = (midPosition1 + midPosition2) / 2;
          median = averagePositions;
     } else {
          median = listNums2[halfList];
     }
 
-    return median;
+    const result = document.getElementById("result2");
+    result.innerText = "The median is: " + median;
 }
 
 //MODE CODE
-function modeCalculate(listNums3){
+
+function numberToMode(){
+    const numbersAmount = document.getElementById("numbersAmount3").value;
+    let html = "";
+
+    for(var i = 0; i < numbersAmount; i++){
+        html += "<label>Number" + (i+1) + "</label>" + "<input type = 'number' id = 'numberValueMode" + i + "'><br>";
+    }
+    html += "<button type = 'button' onclick = 'modeCalculate("+numbersAmount+")' id = 'buttonToCalculateMode'>Calculate</button>";
+
+    document.getElementById("spaceToPutNumber3").innerHTML = html;
+}
+
+function modeCalculate(amount){
+
+    const listNums3 = [];
+
+    for(var i = 0; i < amount; i++){
+        const inputValues = document.getElementById("numberValueMode" + i).value;
+        listNums3.push(parseInt(inputValues));
+   }
+
     const listNums3Count = {};
 
     listNums3.map(
@@ -65,59 +119,62 @@ function modeCalculate(listNums3){
     )
 
     const listNums3NewArray = Object.entries(listNums3Count).sort((a, b) => a[1] - b[1]);
-
+    
     const mode = listNums3NewArray[listNums3NewArray.length - 1];
 
-    return mode[0];
+    const result = document.getElementById("result3");
+    result.innerText = "The mode is: " + parseInt(mode[0]);   
 }
+
+
 
 //WEIGHTED AVERAGE
 
-const notes =[
-    {
-        course: "Maths",
-        note: 9,
-        credit: 4,
-    }, 
-    {
-        course: "Chemistry",
-        note: 7,
-        credit: 3,
-    }, 
-    {
-        course: "Statistics",
-        note: 10,
-        credit: 2,
-    }, 
-    {
-        course: "Literature",
-        note: 6,
-        credit: 2,
-    }
-];
+// const notes =[
+//     {
+//         course: "Maths",
+//         note: 9,
+//         credit: 4,
+//     }, 
+//     {
+//         course: "Chemistry",
+//         note: 7,
+//         credit: 3,
+//     }, 
+//     {
+//         course: "Statistics",
+//         note: 10,
+//         credit: 2,
+//     }, 
+//     {
+//         course: "Literature",
+//         note: 6,
+//         credit: 2,
+//     }
+// ];
 
-const notesCreditsArray = notes.map(
-    function (multiplicationObject){
-        return multiplicationObject.note * multiplicationObject.credit;
-    }
-);
+// const notesCreditsArray = notes.map(
+//     function (multiplicationObject){
+//         return multiplicationObject.note * multiplicationObject.credit;
+//     }
+// );
 
-const sumNotesCredits = notesCreditsArray.reduce(
-    function(accumulatedValue = 0, newElement){
-        return accumulatedValue + newElement;
-    }
-);
+// const sumNotesCredits = notesCreditsArray.reduce(
+//     function(accumulatedValue = 0, newElement){
+//         return accumulatedValue + newElement;
+//     }
+// );
 
-const creditsArray = notes.map(
-    function(additionObject){
-        return additionObject.credit;
-    }
-);
+// const creditsArray = notes.map(
+//     function(additionObject){
+//         return additionObject.credit;
+//     }
+// );
 
-const sumCredits = creditsArray.reduce(
-    function(accumulatedValue = 0, newElement){
-        return accumulatedValue + newElement;
-    }
-);
+// const sumCredits = creditsArray.reduce(
+//     function(accumulatedValue = 0, newElement){
+//         return accumulatedValue + newElement;
+//     }
+// );
 
-const weightedAverage = parseFloat((sumNotesCredits / sumCredits).toFixed(2));
+// const weightedAverage = parseFloat((sumNotesCredits / sumCredits).toFixed(2));
