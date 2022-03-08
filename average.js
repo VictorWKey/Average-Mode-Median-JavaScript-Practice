@@ -5,9 +5,9 @@ function numberToAverage(){
     let html = "";
 
     for(var i = 0; i < numbersAmount; i++){
-        html += "<label>Number" + (i+1) + "</label>" + "<input type = 'number' id = 'numberValueAverage" + i + "'><br>";
+        html += "<label>Number " + (i+1) + "</label>" + "<input type = 'number' class = 'input-num' id = 'numberValueAverage" + i + "'>";
     }
-    html += "<button type = 'button' onclick = 'averageCalculate("+numbersAmount+")' id = 'buttonToCalculateAverage'>Calculate</button>";
+    html += "<button type = 'button' class = 'button-calculate' class = 'main-button' onclick = 'averageCalculate("+numbersAmount+")' id = 'buttonToCalculateAverage'>Calculate</button> <p class = 'result' id = 'result1'></p>";
 
     document.getElementById("spaceToPutNumber1").innerHTML = html;
 }
@@ -40,9 +40,9 @@ function numberToMedian(){
     let html = "";
 
     for(var i = 0; i < numbersAmount; i++){
-        html += "<label>Number" + (i+1) + "</label>" + "<input type = 'number' id = 'numberValueMedian" + i + "'><br>";
+        html += "<label>Number " + (i+1) + "</label>" + "<input type = 'number' class = 'input-num' id = 'numberValueMedian" + i + "'>";
     }
-    html += "<button type = 'button' onclick = 'medianCalculate("+numbersAmount+")' id = 'buttonToCalculateMedian'>Calculate</button>";
+    html += "<button type = 'button' class = 'button-calculate' onclick = 'medianCalculate("+numbersAmount+")' id = 'buttonToCalculateMedian'>Calculate</button> <p class = 'result' id = 'result2'></p>";
 
     document.getElementById("spaceToPutNumber2").innerHTML = html;
 }
@@ -90,9 +90,9 @@ function numberToMode(){
     let html = "";
 
     for(var i = 0; i < numbersAmount; i++){
-        html += "<label>Number" + (i+1) + "</label>" + "<input type = 'number' id = 'numberValueMode" + i + "'><br>";
+        html += "<label>Number " + (i+1) + "</label>" + "<input type = 'number' class = 'input-num' id = 'numberValueMode" + i + "'>";
     }
-    html += "<button type = 'button' onclick = 'modeCalculate("+numbersAmount+")' id = 'buttonToCalculateMode'>Calculate</button>";
+    html += "<button type = 'button' class = 'button-calculate' onclick = 'modeCalculate("+numbersAmount+")' id = 'buttonToCalculateMode'>Calculate</button> <p class = 'result' id = 'result3'></p>";
 
     document.getElementById("spaceToPutNumber3").innerHTML = html;
 }

@@ -1,0 +1,117 @@
+:root{
+    --ch: 12px;
+    --md: 14px;
+    --lg: 16px;
+    --xlg: 20px;
+    --background-color: #b0ffc8;
+    --button-accept-color: #9e2c2c;
+    --button-accept-color-hover: #701e1e;
+    --button-calculate-color: #2a9640;
+    --button-calculate-color-hover: #1c632a ;
+    --input-field: white;
+    --title-color: #09210e;
+}
+body{
+    background-color: var(--background-color);
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+.main-container{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+.container-section{
+    border-top: 2px solid var(--title-color);
+}
+.calculator-container{
+    width: 300px;
+    height: 150px;
+    display: grid;
+    float: left;
+    padding: 16px;
+    margin: 0 0 32px 16px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.spaceToPutNumber{
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    margin-bottom: 4px;
+}
+.description{
+    font-weight: 300;
+    margin-top: 4px;
+}
+h1, .description{
+    color: var(--title-color);
+    text-align: center;
+}
+.title{
+    font-size: var(--xlg);
+    font-weight: bold;
+    color: var(--title-color);
+}
+.input-amount{
+    border: none;
+    border-radius: 20px;
+    height: 28px;
+    margin-bottom: 16px;
+    border: 2px solid var(--button-accept-color);
+    padding-left: 16px;
+}
+.button-accept{
+    border: 2px solid var(--input-field);
+    background-color: var(--button-accept-color);
+    border-radius: 20px;
+    height: 40px;
+    margin: 16px 0 16px 0;
+    color: var(--input-field);
+    font-weight: bold;
+    font-size: var(--md);
+}
+.button-accept:hover{
+    cursor: pointer;
+    background-color: var(--button-accept-color-hover);
+}
+.input-num{
+    border: none;
+    border-radius: 20px;
+    height: 28px;
+    margin-bottom: 16px;
+    border: 2px solid var(--button-calculate-color);
+    padding-left: 16px;
+}
+.button-calculate{
+    border: 2px solid var(--input-field);
+    background-color: var(--button-calculate-color);
+    border-radius: 20px;
+    height: 36px;
+    margin: 16px 0 16px 0;
+    color: var(--input-field);
+    font-weight: bold;
+    font-size: var(--md);
+}
+.button-calculate:hover{
+    cursor: pointer;
+    background-color: var(--button-calculate-color-hover);
+}
+label{
+    margin-bottom: 16px;
+    font-size: var(--md);
+}
+.result{
+    height: 80px;
+    border: 2px solid var(--button-calculate-color);
+    border-radius: 12px;
+    padding: 14px;
+    font-weight: bold;
+}
+

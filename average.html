@@ -5,43 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Average, mode and median | JavaScript Practical Course</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,800&family=Quicksand:wght@300;500;700&family=Rubik:wght@300;400;500&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="average.css">
 </head>
 <body>
-    <header>
-        <h1>Average, mode and median</h1>
-        <h2>Calculate average, mode or median</h2>
-    </header>
-    <section>
-        <h3>Average</h3>
-        <label for="numbersAmount1">Numbers amount</label>
-        <input type="number" name="" id="numbersAmount1">
-        <button onclick="numberToAverage()">Accept</button>
-        <div id="spaceToPutNumber1">
-
+    <div class="main-container">
+        <header>
+            <h1>Average, mode and median</h1>
+            <p class = "description">Calculate average, mode or median</p class = "description">
+        </header>
+        <div class="container-section">
+            <section class="calculator-container">
+                <p class="title">Average</p>
+                <div class = "form">
+                    <label for="numbersAmount1">Numbers amount</label>
+                    <input type="number" class="input-amount" placeholder="Example: 5" name="" id="numbersAmount1">
+                    <button type="button" class="button-accept" onclick="numberToAverage()">Accept</button>
+                    <div class = "spaceToPutNumber" id="spaceToPutNumber1">
+            
+                    </div>
+                </div>
+            </section>
+            <section class="calculator-container">
+                <p class="title">Median</p>
+                <div class = "form">
+                    <label for="numbersAmount2">Numbers amount</label>
+                    <input type="number" class="input-amount" placeholder="Example: 5" id="numbersAmount2">
+                    <button type="button" class="button-accept" onclick="numberToMedian()">Accept</button>
+                    <div class = "spaceToPutNumber" id="spaceToPutNumber2">
+            
+                    </div>
+                </div>
+    
+            </section>
+            <section class="calculator-container">
+                <p class="title">Mode</p>
+                <div class = "form">
+                    <label for="numbersAmount3">Numbers amount</label>
+                    <input type="number" class="input-amount" placeholder="Example: 5" id="numbersAmount3">
+                    <button type="button" class="button-accept" onclick="numberToMode()">Accept</button>
+                    <div class = "spaceToPutNumber" id="spaceToPutNumber3">
+            
+                    </div>
+                </div>
+            </section>
         </div>
-        <p id = "result1"></p>
-    </section>
-    <section>
-        <h3>Median</h3>
-        <label for="numbersAmount2">Numbers amount</label>
-        <input type="number" name="" id="numbersAmount2">
-        <button onclick="numberToMedian()">Accept</button>
-        <div id="spaceToPutNumber2">
-
-        </div>
-        <p id = "result2"></p>
-    </section>
-    <section>
-        <h3>Mode</h3>
-        <label for="numbersAmount3">Numbers amount</label>
-        <input type="number" name="" id="numbersAmount3">
-        <button onclick="numberToMode()">Accept</button>
-        <div id="spaceToPutNumber3">
-
-        </div>
-        <p id = "result3"></p>
-    </section>
-
+    </div>
     <script src="average.js"></script>
 </body>
 </html>
