@@ -20,35 +20,45 @@
             <section class="calculator-container">
                 <p class="title">Average</p>
                 <div class = "form">
-                    <label for="numbersAmount1">Numbers amount</label>
-                    <input type="number" class="input-amount" placeholder="Example: 5" name="" id="numbersAmount1">
-                    <button type="button" class="button-accept" onclick="numberToAverage()">Accept</button>
-                    <div class = "spaceToPutNumber" id="spaceToPutNumber1">
-            
+                    <label for="numbersAmount1">Put the numbers</label>
+                    <input type="text" class="input-amount" placeholder="Example: 1,2,3,4,5"  id="averageNumbers">
+                    <div>
+                        <p>Average:</p>
+                        <div class="result" id="averageResult">
+
+                        </div>
                     </div>
+                    <button type="button" class="button-accept" id="average-button">Calculate</button>
                 </div>
             </section>
             <section class="calculator-container">
                 <p class="title">Median</p>
                 <div class = "form">
-                    <label for="numbersAmount2">Numbers amount</label>
-                    <input type="number" class="input-amount" placeholder="Example: 5" id="numbersAmount2">
-                    <button type="button" class="button-accept" onclick="numberToMedian()">Accept</button>
-                    <div class = "spaceToPutNumber" id="spaceToPutNumber2">
-            
+                    <label for="numbersAmount2">Put the numbers</label>
+                    <input type="text" class="input-amount" placeholder="Example: 1,2,3,4,5" id="medianNumbers">
+                    <div>
+                        <p>Median:</p>
+                        <div class="result" id="medianResult">
+
+                        </div>
                     </div>
+                    <button type="button" class="button-accept" id="median-button">Calculate</button>
+
                 </div>
     
             </section>
             <section class="calculator-container">
                 <p class="title">Mode</p>
                 <div class = "form">
-                    <label for="numbersAmount3">Numbers amount</label>
-                    <input type="number" class="input-amount" placeholder="Example: 5" id="numbersAmount3">
-                    <button type="button" class="button-accept" onclick="numberToMode()">Accept</button>
-                    <div class = "spaceToPutNumber" id="spaceToPutNumber3">
-            
+                    <label for="numbersAmount3">Put the numbers</label>
+                    <input type="text" class="input-amount" placeholder="Example: 1,2,3,4,5" id="modeNumbers">
+                    <div>
+                        <p>Mode:</p>
+                        <div class="result" id="modeResult">
+
+                        </div>
                     </div>
+                    <button type="button" class="button-accept" id="mode-button">Calculate</button>
                 </div>
             </section>
         </div>
